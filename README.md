@@ -28,11 +28,11 @@ Five consecutive lines constitute a single document: title, content, domain, url
 
 **JSON file**
 
-string title
-string url 
-string domain 
-string content  (all "\r" have been replaced with " ")
-double docDate  [Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970
+string title<br>
+string url<br>
+string domain<br>
+string content  (all "\r" have been replaced with " ")<br>
+double docDate  [Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970<br>
 
 #### Application 
 
