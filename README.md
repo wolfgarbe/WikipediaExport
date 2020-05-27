@@ -24,15 +24,20 @@ https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 
 **Text file**
 
-Five consecutive lines constitute a single document: title, content, domain, url, date.
+Five consecutive lines constitute a single document:<br>
+title<br>
+content<br>
+domain<br> 
+url<br>
+date<br>
 
 **JSON file**
 
-string title<br>
-string url<br>
-string domain<br>
-string content  (all "\r" have been replaced with " ")<br>
-number docDate  ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
+title<br>
+url<br>
+domain<br>
+content  (all "\r" have been replaced with " ")<br>
+docDate  ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
 
 ### Application 
 
