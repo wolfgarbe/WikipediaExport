@@ -32,7 +32,7 @@ string title<br>
 string url<br>
 string domain<br>
 string content  (all "\r" have been replaced with " ")<br>
-double docDate  [Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970<br>
+double docDate  ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
 
 #### Application 
 
