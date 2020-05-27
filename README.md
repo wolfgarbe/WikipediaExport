@@ -8,7 +8,7 @@ The Wikipedia data is ideal because its is big (7 million documents in English W
 
 The only problem is that the XML format it comes with is somewhat proprietary and inaccessible. WikipediaExport tries to solve this problem by converting the XML dumpf to either plain text or JSON.
 
-Download wikipedia dump files at: 
+Download wikipedia dump files at: <br>
 http://dumps.wikimedia.org/enwiki/latest/    
 https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2"
 
