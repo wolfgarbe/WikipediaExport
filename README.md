@@ -19,3 +19,9 @@ dotnet WikipediaExport.dll inputpath="C:\data\wikipedia/enwiki-latest-pages-arti
 
 Export to JSON file:
 dotnet WikipediaExport.dll inputpath="C:\data\wikipedia/enwiki-latest-pages-articles.xml" format=json
+
+#### Application 
+
+WikipediaEXport is used to process the input datea for [LuceneBench]
+(https://github.com/wolfgarbe/LuceneBench), a benchmark program to compate the performance of 
+Lucene (a search engine library written in Java, powering the search platforms Solr and Elasticsearch) and SeekStorm (a high-performance search platform written in C#, powering the SeekStorm Search as a Service).
