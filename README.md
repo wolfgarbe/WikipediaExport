@@ -12,7 +12,7 @@ Download wikipedia dump files at: <br>
 http://dumps.wikimedia.org/enwiki/latest/    
 https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 
-#### Usage 
+### Usage 
 
 **Export to text file:**<br>
 dotnet WikipediaExport.dll inputpath="C:\data\wikipedia/enwiki-latest-pages-articles.xml" format=text
@@ -20,7 +20,7 @@ dotnet WikipediaExport.dll inputpath="C:\data\wikipedia/enwiki-latest-pages-arti
 **Export to JSON file:**<br>
 dotnet WikipediaExport.dll inputpath="C:\data\wikipedia/enwiki-latest-pages-articles.xml" format=json
 
-#### Format output file 
+### Format output file 
 
 **Text file**
 
@@ -34,6 +34,6 @@ string domain<br>
 string content  (all "\r" have been replaced with " ")<br>
 double docDate  ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
 
-#### Application 
+### Application 
 
 **WikipediaExport** is used to generate the input data for [LuceneBench](https://github.com/wolfgarbe/LuceneBench), a benchmark program to compare the performance of **Lucene** (a search engine library written in Java, powering the search platforms Solr and Elasticsearch) and **SeekStorm** (a high-performance search platform written in C#, powering the SeekStorm Search as a Service).
