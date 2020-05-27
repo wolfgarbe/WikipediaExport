@@ -10,7 +10,7 @@ The only problem is that the XML format it comes with is somewhat proprietary an
 
 Download wikipedia dump files at: <br>
 http://dumps.wikimedia.org/enwiki/latest/    
-https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2"
+https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 
 #### Usage 
 
