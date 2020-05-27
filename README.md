@@ -1,5 +1,5 @@
 # WikipediaExport
-[![MIT License](https://img.shields.io/github/license/wolfgarbe/wikipediaexport.svg)]
+[![MIT License](https://img.shields.io/github/license/wolfgarbe/wikipediaexport.png)]
 ========
 Export from Wikipedia dump files to JSON or Text files
 
