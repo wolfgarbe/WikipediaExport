@@ -34,9 +34,9 @@ date ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since t
 **JSON file**
 
 title<br>
-url<br>
-domain<br>
 content  (all "\r" have been replaced with " ")<br>
+domain<br>
+url<br>
 docDate  ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
 
 ### Application 
