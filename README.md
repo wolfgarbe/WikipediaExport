@@ -29,7 +29,7 @@ title<br>
 content<br>
 domain<br> 
 url<br>
-date<br>
+date ([Unix time](https://en.wikipedia.org/wiki/Unix_time): milliseconds since the beginning of 1970)<br>
 
 **JSON file**
 
