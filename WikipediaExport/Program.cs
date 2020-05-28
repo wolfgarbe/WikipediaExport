@@ -749,12 +749,6 @@ namespace WikipediaExport
             public byte[] closingBracketByte = Encoding.UTF8.GetBytes("]");
             public byte[] commaByte = Encoding.UTF8.GetBytes(",");
 
-            private static void WriteLine(FileStream fs, string value)
-            {
-                byte[] info = new UTF8Encoding(true).GetBytes(value);
-                fs.Write(info, 0, info.Length);
-            }
-
             public void ReadWikipedia(object param)
             {
                 // index = true:  index
@@ -815,6 +809,8 @@ namespace WikipediaExport
                                             if (WikipediaEntry.el != null)
                                             {
 
+                                                //-----------------
+
                                                 string redirectTitle = "";
                                                 title = WikipediaEntry.el.Element("{" + WikipediaEntry.el.Name.Namespace + "}title").Value;
                                                 try
@@ -845,12 +841,15 @@ namespace WikipediaExport
                                                     if (doc != null)
                                                     {
                                                         if (isText)
-                                                        {
-                                                            WriteLine(outputFileStream, doc.url);
-                                                            WriteLine(outputFileStream, doc.domain);
-                                                            WriteLine(outputFileStream, DateToJsonDouble(doc.docDate).ToString());
-                                                            WriteLine(outputFileStream, doc.title);
-                                                            WriteLine(outputFileStream, doc.text.Replace("\r", " "));
+                                                        {                          
+                                                            byte[] info = Encoding.UTF8.GetBytes(
+                                                                doc.url + Environment.NewLine+ 
+                                                                doc.domain+ Environment.NewLine +
+                                                                DateToJsonDouble(doc.docDate).ToString() + Environment.NewLine +
+                                                                doc.title + Environment.NewLine +
+                                                                doc.text.Replace("\r", " ") + Environment.NewLine
+                                                                );
+                                                            outputFileStream.Write(info, 0, info.Length);
                                                         }
                                                         else
                                                         { 
@@ -869,6 +868,8 @@ namespace WikipediaExport
                                                         if ((count % 100000) == 0) Console.WriteLine("docs: " + count.ToString("N0"));
                                                     }
                                                 }
+
+                                                //---
                                             }
                                         }
                                     }
