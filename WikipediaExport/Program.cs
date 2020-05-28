@@ -156,6 +156,41 @@ namespace WikipediaExport
                 if (url.Length > 5) return url.Substring(0, 5).ToLower() + url.Substring(5); else return url;
             }
 
+            public string[] referer = new string[] { 
+                "/ref=", 
+                "/from/atom10", 
+                "?kc=", 
+                "?cid=", 
+                "?source=",
+                "?ftcamp",
+                "?ITO=",
+                "?fsrc=",
+                "?partner",
+                "?ref",
+                "?csp=",
+                "?src=",
+                "?pk_campaign=",
+                "?cm_mmc=",
+                "?campaign_id=",
+                "?track=",
+                "#",
+                "?utm_",
+                "&utm_",
+                "?part=rss",
+                "?mod=",
+                "?awesm=",
+                "comment-page-",
+                "?autoplay=",
+                "?rss"};
+
+            public string[] index = new string[] {
+                "index.html",
+                "index.htm",
+                "index.php",
+                "index.php",
+                "index.jsp",
+                "index.asp" };
+
             public string StripHash(string url)
             {
                 try
@@ -170,110 +205,31 @@ namespace WikipediaExport
 
                     //strip parameters if path contains date: only if date before parameter
                     string path; int i = url.IndexOf("?"); if (i != -1) path = url.Remove(i); else path = url;
-                    if (path.Contains("/2010/") || path.Contains("/2011/") || path.Contains("/2012/"))
-                    {
-                        if (i != -1) { url = path; }
+                    for (int year=2010;year<2025;year++)
+                    { 
+                        if (path.Contains("/"+year.ToString()+"/"))
+                        {
+                            if (i != -1) { url = path; }
+                        }
                     }
 
-                    //amazon reference
-                    i = url.IndexOf("/ref=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("/from/atom10");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?kc=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?cid=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?source=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?ftcamp");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?ITO=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?fsrc=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?partner");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?ref");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?csp=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?src=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?pk_campaign=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?cm_mmc=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?campaign_id=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    i = url.IndexOf("?track=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip hash
-                    i = url.IndexOf("#");
-                    //if (i != -1) { url = url.Remove(0, i + 1);  }
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip utm parameter (scienceblogs)
-                    i = url.IndexOf("?utm_");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip utm parameter (news.cnet.com)
-                    i = url.IndexOf("&utm_");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip part parameter (news.cnet.com)
-                    i = url.IndexOf("?part=rss");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip utm parameter (allthingsd)
-                    i = url.IndexOf("?mod=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip awe.sm parameter
-                    i = url.IndexOf("?awesm=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip comments
-                    i = url.IndexOf("comment-page-");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip autoplay
-                    i = url.IndexOf("?autoplay=");
-                    if (i != -1) { url = url.Remove(i); }
-
-                    //strip rss
-                    i = url.IndexOf("?rss");
-                    if (i != -1) { url = url.Remove(i); }
-
+                    foreach (string s in referer )
+                    {
+                        i = url.IndexOf(s);
+                        if (i != -1) { url = url.Remove(i); }
+                    }
+                  
                     //strip ? from end
                     url = url.TrimEnd(new char[] { '?' });
 
                     //canonisation/ canonical urls
                     //with / without index and slash
                     //index.htm / index.html / index.php, index.jsp, index.asp
-                    if (url.EndsWith("index.html", StringComparison.OrdinalIgnoreCase)) url = url.Replace("index.html", "");
-                    if (url.EndsWith("index.htm", StringComparison.OrdinalIgnoreCase)) url = url.Replace("index.htm", "");
-                    if (url.EndsWith("index.php", StringComparison.OrdinalIgnoreCase)) url = url.Replace("index.php", "");
-                    if (url.EndsWith("index.jsp", StringComparison.OrdinalIgnoreCase)) url = url.Replace("index.jsp", "");
-                    if (url.EndsWith("index.asp", StringComparison.OrdinalIgnoreCase)) url = url.Replace("index.asp", "");
-
-
+                    foreach (string s in index)
+                    {
+                        if (url.EndsWith(s, StringComparison.OrdinalIgnoreCase)) url = url.Replace(s, "");
+                    }
+                   
                     //normalization domain 
                     if (url.StartsWith("http") && (url.Length > 10))
                     {
