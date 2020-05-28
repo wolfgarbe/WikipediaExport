@@ -813,7 +813,6 @@ namespace WikipediaExport
                                             };
 
                                             if (WikipediaEntry.el != null)
-
                                             {
 
                                                 string redirectTitle = "";
@@ -948,9 +947,9 @@ namespace WikipediaExport
             if (!String.IsNullOrEmpty(inputPath) && String.IsNullOrEmpty(outputPath))
             {
                 if (format=="text")
-                    outputPath = Path.GetDirectoryName(inputPath)+ Path.GetFileNameWithoutExtension(inputPath) + ".txt";
+                    outputPath = Path.GetDirectoryName(inputPath)+"/" +Path.GetFileNameWithoutExtension(inputPath) + ".txt";
                 else
-                    outputPath = Path.GetDirectoryName(inputPath) + Path.GetFileNameWithoutExtension(inputPath) + ".json";
+                    outputPath = Path.GetDirectoryName(inputPath)+"/" + Path.GetFileNameWithoutExtension(inputPath) + ".json";
             }
             string urlPrefix = Path.GetFileName(inputPath).Substring(0, 1); //en
 
