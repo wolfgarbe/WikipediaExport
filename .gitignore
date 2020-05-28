@@ -27,7 +27,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-![Bb]in/[Rr]elease/
+!**/bin/Release/*.*
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
