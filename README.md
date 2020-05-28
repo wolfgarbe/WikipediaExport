@@ -3,7 +3,7 @@ WikipediaExport<br>
 ========
 **Convert Wikipedia XML dump files to JSON or Text files**
 
-Text corpora are required for algorithm design & benchmarking in information retrieval, machine leaning, language processing.<br>
+Text corpora are required for algorithm design & benchmarking in information retrieval, machine learning, language processing.<br>
 The Wikipedia data is ideal because it is large (7 million documents in English Wikipedia) and available in many languages.
 
 Unfortunately the XML format of the Wikipedia dump is somewhat proprietary and inaccessible. WikipediaExport solves this problem by converting the XML dump to plain text or JSON - two formats that can be easily consumed by many tools.
