@@ -6,7 +6,7 @@ Export from Wikipedia XML dump files to JSON or Text files
 Sometimes a big text corpus is required for indexing & search testing, benchmarking and other information retrieval tasks.<br>
 The Wikipedia data is ideal because it is large (7 million documents in English Wikipedia) and available in many languages.
 
-Unfortunately the XML format of the Wikipedia dump is somewhat proprietary and inaccessible. WikipediaExport tries to solve this problem by converting the XML dump to plain text or JSON - two formats that can be easily consumed by many tools.
+Unfortunately the XML format of the Wikipedia dump is somewhat proprietary and inaccessible. WikipediaExport solves this problem by converting the XML dump to plain text or JSON - two formats that can be easily consumed by many tools.
 
 Download wikipedia dump files at: <br>
 http://dumps.wikimedia.org/enwiki/latest/    
