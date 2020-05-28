@@ -1,7 +1,7 @@
 WikipediaExport<br> 
 [![MIT License](https://img.shields.io/github/license/wolfgarbe/wikipediaexport.png)](https://github.com/wolfgarbe/WikipediaExport/blob/master/LICENSE)
 ========
-Export from Wikipedia XML dump files to JSON or Text files
+Convert Wikipedia XML dump files to JSON or Text files
 
 Sometimes a big text corpus is required for indexing & search testing, benchmarking and other information retrieval tasks.<br>
 The Wikipedia data is ideal because it is large (7 million documents in English Wikipedia) and available in many languages.
